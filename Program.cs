@@ -48,7 +48,7 @@ namespace Etapa1
             while (contador < arregloCursos.Length)
             {
                 Console.WriteLine($"Nombre: {arregloCursos[contador].Name}, Id {arregloCursos[contador].UniqueId}");
-                contador++;
+                contador++; 
             }
 
 
