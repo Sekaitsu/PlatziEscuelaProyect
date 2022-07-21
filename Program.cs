@@ -43,14 +43,10 @@ namespace Etapa1
 
         private static void ImprimirCursos(Curso[] arregloCursos)
         {
-            int contador = 0;
-
-            while (contador < arregloCursos.Length)
+            for(int contador = 0; contador <= arregloCursos.Length; contador++)
             {
-                Console.WriteLine($"Nombre: {arregloCursos[contador].Name}, Id {arregloCursos[contador].UniqueId}");
-                contador++; 
+                Console.WriteLine($"Nombre: {arregloCursos[contador].Name}, Id: {arregloCursos[contador].UniqueId}");
             }
-
 
         }
     }
