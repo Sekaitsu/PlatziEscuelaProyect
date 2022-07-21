@@ -13,36 +13,37 @@ namespace Etapa1
              * Se puede poner en el orden que uno desee se puede usar de ambos modos
              */
             var escuela = new clsEscuela("Platzi Academy", 2012, TiposEscuela.Primaria, pais: "Colombia", ciudad: "Bogotá");
-
-
-            //Forma 1 de arreglo
-            //var arregloCursos = new Curso[3]
-            //{
-            //    new Curso(){ Name = "101" },
-            //    new Curso(){ Name = "201" },
-            //    new Curso(){ Name = "301" }
-            //};
-
-            //Forma 2 de arreglo
-            Curso[] arregloCursos =
+            //Forma 3 de arreglo
+            escuela.Cursos = new Curso[]
             {
-                new Curso(){ Name = "101" },
-                new Curso(){ Name = "201" },
-                new Curso(){ Name = "301" }
+                new Curso(){ Name = "101"},
+                new Curso(){ Name = "201"},
+                new Curso(){ Name = "301"}
             };
-
-            WriteLine(escuela);
-
-            //IMPRIMIR RESULTADOS
-            WriteLine(" ================== ================== ");
-            ImprimirCursos(arregloCursos);
+            ImprimirCursosEscuela(escuela);
         }
-
-        private static void ImprimirCursos(Curso[] arregloCursos)
+        private static void ImprimirCursosEscuela(clsEscuela escuela)
         {
-            foreach (var curso in arregloCursos)
+            WriteLine("=================================================================");
+            WriteLine("                      Cursos de la escuela");
+            WriteLine("=================================================================");
+
+            //Forma 1 de imprimir
+            //if (escuela != null && escuela.Cursos != null)
+            //{
+            //    foreach (var curso in escuela.Cursos)
+            //    {
+            //        WriteLine($"Nombre Curso: {curso.Name}, Id Curso: {curso.UniqueId}");
+            //    }
+            //}
+
+            //Forma 2 de imprimir 
+            if (escuela?.Cursos != null)
             {
-                WriteLine($"Nombre: {curso.Name}, Id: {curso.UniqueId}");
+                foreach (var curso in escuela.Cursos)
+                {
+                    WriteLine($"Nombre Curso: {curso.Name}, Id Curso: {curso.UniqueId}");
+                }
             }
         }
     }
